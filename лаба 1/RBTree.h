@@ -49,11 +49,6 @@ public:
 		root = nil;
 	}
 
-	~RBTree()
-	{
-
-	}
-
 	void leftRotate(Node* x)
 	{
 		Node* y = x->rightChild;
