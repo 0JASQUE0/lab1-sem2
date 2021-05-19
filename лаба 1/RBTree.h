@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include <list>
-#include <queue>
+#include "list.h"
+#include "queue.h"
 
 using namespace std;
 
@@ -325,17 +325,17 @@ public:
 		delete x;
 	}
 
-	list<Key> getKeys()
+	LinkedList<Key> getKeys()
 	{
 		if (root == nil) {
 			throw("There is no element");
 		}
 		queue<Node*> queueKey;
-		list<Value> listKey;
+		LinkedList<Value> listKey;
 		queueKey.push(root);
 
 		while (!queueKey.empty()) {
-			Node* temp = queueKey.front();
+			Node* temp = queueKey.head->data;
 			queueKey.pop();
 			listKey.push_back(temp->key);
 
@@ -350,17 +350,17 @@ public:
 		return listKey;
 	}
 
-	list<Value> getValues()
+	LinkedList<Value> getValues()
 	{
 		if (root == nil) {
 			throw("There is no element");
 		}
 		queue<Node*> queueValues;
-		list<Value> listValues;
+		LinkedList<Value> listValues;
 		queueValues.push(root);
 
 		while (!queueValues.empty()) {
-			Node* temp = queueValues.front();
+			Node* temp = queueValues.head->data;
 			queueValues.pop();
 			listValues.push_back(temp->value);
 
@@ -384,7 +384,7 @@ public:
 		queue.push(root);
 
 		while (!queue.empty()) {
-			Node* temp = queue.front();
+			Node* temp = queue.head->data;
 			queue.pop();
 			cout << temp->key << " - " << temp->value << endl;
 
@@ -397,5 +397,3 @@ public:
 		}
 	}
 };
-
-

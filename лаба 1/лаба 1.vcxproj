@@ -22,6 +22,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="list.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="RBTree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

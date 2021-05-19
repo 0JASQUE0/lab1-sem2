@@ -63,10 +63,10 @@ namespace UnitTest1
 			RBTree<int, int> tree;
 			tree.insert(1, 11);
 			tree.insert(2, 22);
-			list<int> test;
+			LinkedList<int> test;
 			test = tree.getKeys();
-			Assert::IsTrue(test.front() == 1);
-			Assert::IsTrue(test.back() == 2);
+			Assert::AreEqual(test.at(0), 1);
+			Assert::AreEqual(test.at(1), 2);
 		}
 
 		TEST_METHOD(get_keysTest2)
@@ -74,7 +74,7 @@ namespace UnitTest1
 			RBTree<int, int> tree;
 			try
 			{
-				list<int> test;
+				LinkedList<int> test;
 				test = tree.getKeys();
 			}
 			catch (const char* exception)
@@ -88,10 +88,10 @@ namespace UnitTest1
 			RBTree<int, int> tree;
 			tree.insert(1, 11);
 			tree.insert(2, 22);
-			list<int> test;
+			LinkedList<int> test;
 			test = tree.getValues();
-			Assert::IsTrue(test.front() == 11);
-			Assert::IsTrue(test.back() == 22);
+			Assert::AreEqual(test.at(0), 11);
+			Assert::AreEqual(test.at(1), 22);
 		}
 
 		TEST_METHOD(get_valuesTest2)
@@ -99,7 +99,7 @@ namespace UnitTest1
 			RBTree<int, int> tree;
 			try
 			{
-				list<int> test;
+				LinkedList<int> test;
 				test = tree.getValues();
 			}
 			catch (const char* exception)

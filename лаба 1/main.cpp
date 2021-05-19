@@ -1,6 +1,7 @@
 #include <iostream>
 #include "RBTree.h"
-#include <list>
+#include "list.h"
+#include "queue.h"
 #include <iterator>
 
 using namespace std;
@@ -21,20 +22,15 @@ int main()
 
 	cout << endl << tree.find(3)->value << endl;
 
-	list<int> test;
-	list<int>::iterator it;
+	LinkedList<int> test;
 	test = tree.getKeys();
 
-	for (it = test.begin(); it != test.end(); it++) {
-		cout << *it << " ";
-	}
+	test.print_to_console();
 
 	test = tree.getValues();
 	cout << endl;
-	for (it = test.begin(); it != test.end(); it++) {
-		cout << *it << " ";
-	}
 
+	test.print_to_console();
 
 	return 0;
 }
