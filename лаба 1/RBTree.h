@@ -331,7 +331,7 @@ public:
 			throw("There is no element");
 		}
 		queue<Node*> queueKey;
-		LinkedList<Value> listKey;
+		LinkedList<Key> listKey;
 		queueKey.push(root);
 
 		while (!queueKey.empty()) {
