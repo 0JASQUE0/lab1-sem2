@@ -57,7 +57,9 @@ public:
 		if (y->leftChild != nil) {
 			y->leftChild->parent = x;
 		}
-
+		if (y != nil) {
+			y->parent = x->parent;
+		}
 		if (x->parent == nil) {
 			root = y;
 		}
@@ -80,7 +82,9 @@ public:
 		if (x->rightChild != nil) {
 			x->rightChild->parent = y;
 		}
-
+		if (x != nil) {
+			x->parent = y->parent;
+		}
 		if (y->parent == nil) {
 			root = x;
 		}
